@@ -20,7 +20,7 @@ $(info bin_target =  $(BIN_TARGET))
 
 $(info DIR_SRC =  $(DIR_SRC))
 ${BIN_TARGET}:${OBJ} 
-	$(CC) $(OBJ)  -o $@ -L//usr/lib/x86_64-linux-gnu -lPocoFoundation
+	$(CC) $(OBJ)  -o $@ -L//usr/lib/x86_64-linux-gnu -lPocoFoundation -lPocoData -lPocoDataSQLite
 
 ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

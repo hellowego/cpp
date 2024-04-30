@@ -11,6 +11,9 @@
 #include "Poco/Data/RecordSet.h"
 #include "Poco/Data/Column.h"
 #include <vector>
+#include <boost/asio.hpp>
+#include <sqlite3.h>
+#include "sqliteBoost.h"
 
 using namespace std;
 
@@ -52,9 +55,21 @@ void test()
     Poco::Data::SQLite::Connector::unregisterConnector();
 }
 
+void testSqlite()
+{
+    boost::asio::io_service io_service;
+    std::string db_path = "/home/cf/cpp/test.db";
+
+    query_sqlite(io_service, db_path);
+
+    // 运行io_service事件循环
+    io_service.run();
+}
+
 int main()
 {
-    test();
+    testSqlite();
+    // test();
     // Poco::DateTime DateTime now;
     DateTime now;
     int year = now.dayOfWeek();

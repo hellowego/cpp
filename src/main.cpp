@@ -14,10 +14,17 @@
 #include <boost/asio.hpp>
 #include <sqlite3.h>
 #include "sqliteBoost.h"
+#include "../include/Queue.h"
 
 using namespace std;
 
 using Poco::DateTime;
+
+void test232()
+{
+    MyQueue myQueue;
+    myQueue.c
+}
 
 void test()
 {
@@ -68,6 +75,7 @@ void testSqlite()
 
 int main()
 {
+    test232();
     testSqlite();
     // test();
     // Poco::DateTime DateTime now;
